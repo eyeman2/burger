@@ -1,0 +1,22 @@
+body{
+    background: linear-gradient(to right, rgba(227, 14, 235, 0.87), rgb(32, 10, 235));
+      /* background: radial-gradient(farthest-corner at 100% 100%, rgba(227, 14, 235), rgb(42, 28, 173));
+      background-repeat: no-repeat; */
+      /* background-size: cover */
+}
+
+wrapper{
+
+}
+
+listed{
+
+}
+
+favorite{
+
+}
+
+button{
+    
+}
