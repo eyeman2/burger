@@ -1,12 +1,12 @@
 body{
-    background: linear-gradient(to right, rgba(227, 14, 235, 0.87), rgb(32, 10, 235));
+    background: radial-gradient(circle, rgba(215, 135, 218, 0.8), rgba(106, 138, 187, 0.8));
       /* background: radial-gradient(farthest-corner at 100% 100%, rgba(227, 14, 235), rgb(42, 28, 173));
       background-repeat: no-repeat; */
       /* background-size: cover */
 }
 
-wrapper{
-
+#left{
+    margin-left: 20px;
 }
 
 listed{
@@ -18,5 +18,34 @@ favorite{
 }
 
 button{
+
+}
+
+.notfav{
+   /* font-size: 15px; */
+}
+
+li{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.fav{
+    font-size: 15px;
     
+}
+
+.wrapper{
+    margin-top: 60px;
+}
+
+#bottom{
+    /* position: static; */
+    /* bottom: 150px; */
+    /* width: 800px; */
+    /* left: 300px; */
+}
+h1{
+    margin-left: 30px;
 }

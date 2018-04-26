@@ -43,17 +43,17 @@ var orm = {
         queryString += toCol.toString();
         queryString += ') ';
         queryString += "VALUES (";
-        queryString += newName + " ?";
+        queryString += printQuestionMarks(newName.length);
         queryString += ') ';
        
-
+        console.log(queryString);
         connection.query(queryString, newName, function (err, results) {
             if (err) {
                 throw err;
             }
             cb(results);
         });
-    
+
     },
 
 

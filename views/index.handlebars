@@ -1,39 +1,70 @@
 <h1>What dat Baby Name!</h1>
+<div class="wrapper">
 
-<h2>List of possible baby names</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default" id="left">
+                <div class="panel-heading">
+                    <h2 class="panel-title">
+                        List of possible baby names
+                    </h2>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each names}} {{#unless listIt}}
+                        <li>
+                            {{name}}
 
-<ul>
-    {{#each names}} {{#unless listIt}}
-    <li>
-        {{name}}
-        <form>
-            <button class="fav" type="submit" data-id={{id}}>Add to Favorites</button>
-        </form>
-    </li>
+                            <button class="btn btn-success btn-xs fav" type="submit" data-id={{id}}>Add to Favorites</button>
+                            <hr>
 
-    {{/unless}} {{/each}}
-</ul>
+                        </li>
 
-<h2>Favorite names</h2>
-<ul>
-    {{#each names}} {{#if listIt}}
-    <li>
-        {{name}}
-        <form action="api/names/{{this.id}}?" _method=PUT method="POST">
-            <button type="submit" class="notfav" data-id={{id}}> Changed Mind </button>
-        </form>
-    </li>
-    {{/if}} {{/each}}
-</ul>
+                        {{/unless}} {{/each}}
+                    </ul>
+                </div>
 
-<h2>Add a name</h2>
-<div>
-    <form class="create-form">
-        <div class="form-group">
-            <label for="babe">Baby name</label>
-            <input type="text" id="babe" data-name="newName">
+            </div>
         </div>
+        <div class="col-md-4">
+            <div class="panel panel-success" id="bottom">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Add a name</h3>
+                </div>
+                <div class="panel-body">
+                    <form class="create-form">
+                        <div class="form-group">
+                            <label for="babe">Baby name</label>
+                            <input class="form-control" type="text" id="babe" data-name="newName">
+                        </div>
 
-        <button id="addOn" type="submit">Add to List</button>
-    </form>
+                        <button class="btn btn-warning btn-md" id="addOn" type="submit">Add to List</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default" id="right">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Favorite names</h2>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each names}} {{#if listIt}}
+                        <li>
+                            {{name}} {{!--
+                            <form action="/api/names/{{this.id}}?_method=PUT" method="POST"> --}}
+                                <button align="right" type="submit" class="btn btn-success btn-xs notfav" data-id={{id}}> Changed Mind </button>
+                                <hr>
+                                {{!-- </form> --}}
+                        </li>
+                        {{/if}} {{/each}}
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 </div>

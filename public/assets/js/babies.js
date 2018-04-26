@@ -41,16 +41,15 @@ $("#addOn").on("click", function (event) {
   // Make sure to preventDefault on a submit event.
   event.preventDefault();
   // var id = $(this).data("name")
-  var newName = {
-    name: $("#babe").val().trim()
-  };
-  console.log(newName);
+  var newName = $("#babe").val().trim();
+  var nameupdate = {name: newName}
+  console.log(nameupdate);
   // name: newName
   
   // Send the POST request.
   $.ajax("/api/names", {
     type: "POST",
-    data: newName
+    data: nameupdate
   }).then(
     function () {
       

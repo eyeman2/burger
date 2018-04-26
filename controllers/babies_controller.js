@@ -14,10 +14,10 @@ router.get("/", function (req, res) {
 
 router.post('/api/names', function (req, res) {
 
-    baby.insertOne("name", req.body.name, function (result) {
+    baby.insertOne("name", [req.body.name], function (result) {
         res.json({ id: result.insertId });
     });
-    console.log("post up" + req.body.name)
+    console.log("post up " + req.body.name)
 });
 
 router.put('/api/names/:id', function (req, res) {
